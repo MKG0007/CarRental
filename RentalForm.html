@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentalFrom</title>
+    <style>
+        body{
+            background-image: url("rentalfromBG4.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+        .rentalform{
+            width: 100vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .outerform{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            height: 80%;
+            background-color: rgba(0, 0, 0, 0.082);
+            box-shadow: 1px 4px 41px rgb(40, 39, 39);
+border-radius: 0.5rem;  
+
+        }
+
+        .box{
+            width: 30rem;
+            height: 22px;
+        }
+
+        #Cars{
+            width: 15rem;
+            height: 28px;
+            text-align: center;
+
+        }
+
+        #number{
+            width: 5rem;
+            height: 28px;
+            text-align: center;
+        }
+
+        .all{
+            border: 2px solid rgba(0, 0, 0, 0.56);
+            border-radius: 10px;
+        }
+        .buton{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rentalform">
+        <div class="outerform">
+            <div class="innerform">
+
+                
+                <h2>Car Rental From</h2>
+                <form action="" id="myForm">
+                    <div class="uname">
+                <input type="text" name="firstName" id="" placeholder=" Enter Your First Name" class = "box all" required>
+                
+            </div><br>
+            
+            <div class="uname">
+                <input type="text" name="lastName" id="" placeholder="Enter Your Second Name"class = "box all">
+            </div><br>
+            <div class="phoneNo box">
+                <input type="tel" name="phoneNo" id="" placeholder="Enter Your phone No." required maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"class = "box all" required>
+            </div><br>
+            <div class="ageGen">
+                <input type="number" name="uage" id="" placeholder="Set Age" class="all">
+                <select name="ugender" id="" class="all">
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </div><br>
+            
+            <div class="carChoose">
+                <select name="" id="number" class="all">
+                    <option value="" selected>No.OfCars</option>
+                    <option value="">One</option>
+                    <option value="">Two</option>
+                    <option value="">Three</option>
+                    <option value="">Four</option>
+                </select>
+                <select name="" id="Cars" class="all">
+                    <option value="" selected>Select from available Cars</option>
+                    <option value="">Toyota Corolla</option>
+                    <option value="">Honda Civic</option>
+                    <option value="">Ford Mustang</option>
+                    <option value="">Chevrolet Camaro</option>
+                    <option value="">Mercedes-Benz C-Class</option>
+                    <option value="">Volkswagen Jetta</option>
+                </select>
+            </div><br>
+
+            <div class="address">
+                <textarea name="" id="" cols="50" rows="5" placeholder="Enter Your Address" class="all"></textarea>
+            </div><br>
+            
+            <div class="dID">
+                <input type="text" name="" id="" placeholder="Enter Your License ID"class = "box all" required>
+            </div><br>
+            
+            <div class="email box">
+                <input type="email" name="userMail" id="" placeholder="Enter Your Gmail ID" class="box all">
+            </div><br>
+
+
+            
+            <div class="submitButtton">
+                
+                <input type="submit" value="Submit" class="buton"  style="background-color: rgba(172, 255, 47, 0.611);">
+                
+                <input type="reset" value="Reset" class="buton" style="background-color: rgba(255, 85, 0, 0.57);">
+                
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<script>
+            document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            window.location.href = "index.html";
+        });
+
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        // Redirect to another webpage
+        alert("Your request have been registrated successfully \n Thanks for using our website");
+        
+    });
+
+</script>
+    
+</body>
+</html>

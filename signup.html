@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUpPage</title>
+    <style>
+        /* Your CSS styles */
+        .error {
+            color: red;
+        }
+        body{
+            background-image: url("signupBG.png");
+            background-size: cover;
+        }
+        .container{
+            width: 100vw;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .innercontainer{
+            width: 40%;
+            height: 70%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.082);
+            box-shadow: 1px 4px 41px rgb(40, 39, 39);
+border-radius: 0.5rem;
+
+        }
+
+        .box input{
+            width: 20rem;
+            height: 2rem;
+
+
+        }
+        .ageGen input{
+            width: 5rem;
+            height: 1.7rem;
+        }
+
+        .ageGen select{
+            width: 5rem;
+            height: 2rem;
+            font-size: 0.8rem;
+        }
+
+        input , select{
+            border-radius: 8px;
+        }
+
+        img{
+            opacity: 0.8;
+            border: 3px solid;
+            border-image: linear-gradient(to right, rgb(255, 153, 0), rgba(255, 115, 0, 0.793));
+    border-image-slice: 1;
+        }
+    </style>
+</head>
+<body>
+
+<img src="logo.png" alt="" width="180rem" height="80rem">
+
+<div class="container">
+    <div class="innercontainer">
+        <h1>Sign up</h1>
+        <form action="" id="myForm">
+            <div class="uname box">
+                <input type="text" name="firstName" id="firstName" placeholder=" Enter Your First Name" required>
+                <span id="firstNameError" class="error"></span>
+            </div><br>
+
+            <div class="uname box">
+                <input type="text" name="lastName" id="lastName" placeholder="Enter Your Last Name">
+            </div><br>
+            <div class="phoneNo box">
+                <input type="tel" name="phoneNo" id="phoneNo" placeholder="Enter Your phone No." required maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+                <span id="phoneNoError" class="error"></span>
+            </div><br>
+            <div class="ageGen">
+                <input type="number" name="uage" id="uage" placeholder="Set Age" required>
+                <select name="ugender" id="ugender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div><br>
+
+            <div class="email box">
+                <input type="email" name="userMail" id="userMail" placeholder="Enter Your Gmail ID" required>
+                <span id="userMailError" class="error"></span>
+            </div><br>
+
+            <div class="submitButtton">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div><br>
+
+            <div class="login">
+                <p>if you already have an account? <a href="loginPage.html">Login here</a></p>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        if (validateForm()) {
+            // If the form is valid, redirect to another webpage
+            window.location.href = "index.html";
+        }
+    });
+
+    function validateForm() {
+        var firstName = document.getElementById("firstName").value.trim();
+        var phoneNo = document.getElementById("phoneNo").value.trim();
+        var userMail = document.getElementById("userMail").value.trim();
+        var firstNameError = document.getElementById("firstNameError");
+        var phoneNoError = document.getElementById("phoneNoError");
+        var userMailError = document.getElementById("userMailError");
+        var valid = true;
+
+        // Reset error messages
+        firstNameError.textContent = "";
+        phoneNoError.textContent = "";
+        userMailError.textContent = "";
+
+        // Validate First Name
+        if (firstName === "") {
+            firstNameError.textContent = "First Name is required.";
+            valid = false;
+        }
+
+        // Validate Phone Number
+        if (phoneNo === "") {
+            phoneNoError.textContent = "Phone Number is required.";
+            valid = false;
+        } else if (phoneNo.length !== 10) {
+            phoneNoError.textContent = "Phone Number must be 10 digits.";
+            valid = false;
+        }
+
+        // Validate Email
+        if (userMail === "") {
+            userMailError.textContent = "Email is required.";
+            valid = false;
+        }
+
+        // You can add more validation for other fields here
+
+        return valid;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+    background-image: url("rentalfromBG.png");
+    background-size: cover;
+    height: 600px;
+    background-attachment: fixed;
+}
+.submit{
+    background-color: lightgreen;
+}
+form{
+    height: 900px;
+    width: 1500px;
+    background-position: center;
+    text-align: center;
+}
+.box{
+    height: 35px;
+    width: 350px;
+}
+.font{
+    font-size: 20px;
+    color: aqua;
+}
+.submit{
+    width: 84px;
+    height: 25px;
+    font-size: 17px;
+    background-color: red;
+}
+input{
+    font-size: 22px;
+    text-align: center;
+    border-width: 3px;
+    border-color: darkblue;
+    border-radius: 20px;
+}
+textarea{
+    font-size: 18px;
+    text-align: center;
+    border-width: 3px;
+    border-radius: 20px;
+    border-color: darkblue;
+    width: 542px;
+    height: 210px;
+}
